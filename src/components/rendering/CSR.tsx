@@ -9,8 +9,8 @@ const CSR = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const response = await fetch(`https://catfact.ninja/fact`);
-      const { results } = await response.json();
-      setCat(results[0]);
+      const results = await response.json();
+      setCat(results);
     };
 
     fetchUser();

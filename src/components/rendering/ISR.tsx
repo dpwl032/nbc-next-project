@@ -3,13 +3,13 @@ import type { RandomCat } from "@/types";
 
 //주기적으로 업데이트
 const ISR = async () => {
-  const response = await fetch(`https://randomuser.me/api`, {
+  const response = await fetch(`https://catfact.ninja/fact`, {
     next: {
       revalidate: 5,
     },
   });
-  const { results } = await response.json();
-  const cat: RandomCat = results[0];
+  const results = await response.json();
+  const cat: RandomCat = results;
   return (
     <div>
       <p>isr</p>

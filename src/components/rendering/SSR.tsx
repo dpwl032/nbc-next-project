@@ -3,11 +3,11 @@ import type { RandomCat } from "@/types";
 
 //매번 갱신
 const SSR = async () => {
-  const response = await fetch(`https://randomuser.me/api`, {
+  const response = await fetch(`https://catfact.ninja/fact`, {
     cache: "no-cache",
   });
-  const { results } = await response.json();
-  const cat: RandomCat = results[0];
+  const results = await response.json();
+  const cat: RandomCat = results;
   return (
     <div>
       <p>ssr</p>
